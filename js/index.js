@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM\nIs\nAwesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street\nSomewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -40,3 +40,84 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let img2 = document.getElementById("cta-img");
+img2.setAttribute('src', siteContent["cta"]["img-src"])
+
+let img3 = document.getElementById("middle-img");
+img3.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let nav = document.querySelectorAll("a");
+nav[0].textContent = siteContent["nav"]["nav-item-1"]
+nav[1].textContent = siteContent["nav"]["nav-item-2"]
+nav[2].textContent = siteContent["nav"]["nav-item-3"]
+nav[3].textContent = siteContent["nav"]["nav-item-4"]
+nav[4].textContent = siteContent["nav"]["nav-item-5"]
+nav[5].textContent = siteContent["nav"]["nav-item-6"]
+
+  nav.forEach(nav=> {
+    nav.style.color = 'green';})
+
+let h1 = document.querySelector("h1");
+h1.textContent = siteContent["cta"]["h1"]
+
+let button = document.querySelector("button");
+button.textContent = siteContent["cta"]["button"]
+
+let title = document.querySelectorAll(".main-content h4");
+title[0].textContent = siteContent["main-content"]["features-h4"]
+title[1].textContent = siteContent["main-content"]["about-h4"]
+title[2].textContent = siteContent["main-content"]["services-h4"]
+title[3].textContent = siteContent["main-content"]["product-h4"]
+title[4].textContent = siteContent["main-content"]["vision-h4"]
+
+let titleText = document.querySelectorAll(".text-content p");
+titleText[0].textContent = siteContent["main-content"]["features-content"]
+titleText[1].textContent = siteContent["main-content"]["about-content"]
+titleText[2].textContent = siteContent["main-content"]["services-content"]
+titleText[3].textContent = siteContent["main-content"]["product-content"]
+titleText[4].textContent = siteContent["main-content"]["vision-content"]
+
+let contact = document.querySelector(".contact h4");
+contact.textContent = siteContent["contact"]["contact-h4"]
+
+let contactInfo = document.querySelectorAll(".contact p");
+contactInfo[0].textContent = siteContent["contact"]["address"]
+contactInfo[1].textContent = siteContent["contact"]["phone"]
+contactInfo[2].textContent = siteContent["contact"]["email"]
+
+let footerInfo = document.querySelector("footer p");
+footerInfo.textContent = siteContent["footer"]["copyright"]
+
+let newNavInfo = document.createElement("a");
+newNavInfo.setAttribute('href', '#', siteContent["nav"])
+newNavInfo.textContent = "Home";
+
+let parentNavInfo = document.querySelector("nav");
+parentNavInfo.prepend(newNavInfo);
+
+let newerNavInfo = document.createElement("a");
+newerNavInfo.setAttribute('href', '#', siteContent["nav"])
+newerNavInfo.textContent = "Blog";
+
+let parentNavInfoNew = document.querySelector("nav");
+parentNavInfoNew.appendChild(newerNavInfo);
+
+newNavInfo.style.color = 'green';
+newerNavInfo.style.color = 'green';
+
+
+h1.style.whiteSpace = "pre-line";
+contactInfo[0].style.whiteSpace = "pre-line";
+
+
+
+
+
+
+
+
+
+
+
+
